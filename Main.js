@@ -1,4 +1,5 @@
 const {
+    validateEmployee,
     generateEmployeeWageData,
     calcTotalWage,
     getDayWithWage,
@@ -9,10 +10,18 @@ const {
     countDaysWorked
 } = require('./employeWage');
 
+//Validate Employee
+const empId = "101"; 
+const salary = "50000"; 
+const gender = "M"; 
+const joiningDate = "2023-05-15"; 
+
+console.log("Validation Result:", validateEmployee(empId, salary, gender, joiningDate));
+
 //Generate Employee Wage Data
 const wageData = generateEmployeeWageData();
 
-//Perform operations
+// Perform operations
 console.log("1. Total Employee Wage:", calcTotalWage(wageData));
 console.log("2. Day-wise Wage:", getDayWithWage(wageData));
 console.log("3. Days with Full-time Wage:", getFullTimeDays(wageData));
